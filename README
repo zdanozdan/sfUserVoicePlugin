@@ -1,6 +1,3 @@
-
-======================
-
 The `sfUserVoicePlugin` is an interface to uservoice.com feedback. It allows 'feedback' popup tab
 fetched from uservoice.com website.
 
