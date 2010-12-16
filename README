@@ -1,0 +1,65 @@
+
+======================
+
+The `sfUserVoicePlugin` is an interface to uservoice.com feedback. It allows 'feedback' popup tab
+fetched from uservoice.com website.
+
+
+Prerequisites
+-------------
+
+This plugin for symfony 1.3/1.4. Uservoice.com requires registration on it's site to get
+user id and host data. As for today there is one free plan that can be used to kick starting.
+More info at [http://uservoice.com/plans]
+
+
+Installation
+------------
+
+1 - Install the plugin.
+
+The easiest way to install `sfUserVoicePlugin` is to use the symfony command line:
+
+    > php symfony plugin:install sfUserVoicePlugin
+
+However recommended method is to fork the latest package from my git hub [https://github.com/zdanozdan/sfUserVoicePluing]
+
+2 - Register feedback on uservoice.com and get key, host and forum parameters.
+
+3 - Configure app.yml
+
+  >  sf_user_voice_plugin:
+  >    key:                  my key from uservoice
+  >    host:                 my serive address on uservoice
+  >    forum:                my forum id
+
+Those 3 are required to put in user app.yml config. Plugin however have more params to config in plugin/config directory and they can be user do further configure the plugin but they have default values
+
+      >  sf_user_voice_plugin:
+      >    key:                  
+      >    host: 
+      >    forum:
+      >    alignment:              right	
+      >    background_color:       f00 
+      >    text_color:             white
+      >    hover_color:            06c
+      >    show_tab:               true
+      >    lang:                   en
+      >    params:                 
+      >    no_dialog:              false
+
+4 - Clear the cache to enable the autoloading to find the new classes:
+
+    > php symfony cc
+
+5 - Use helper to display javascript
+
+In the template you can use UserVoiceHelper do bind popup feedback
+
+   > use_helper('UserVoice');
+   > echo add_user_voice($sf_user->getCulture())
+
+
+TODO
+----
+* add some testing
