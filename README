@@ -56,6 +56,16 @@ In the template you can use UserVoiceHelper do bind popup feedback
    > use_helper('UserVoice');
    > echo add_user_voice($sf_user->getCulture())
 
+User voice should be added before </body> element so probably the best place would be layout.php (and every layout you want to display user voice feedback
+
+     > <body>
+     > HTML code here
+     > <p>this is apps/frontend/templates/layout.php</p>
+     > <?php use_helper('UserVoice'); ?>
+     > <?php include_javascripts() ?>
+     > <?php echo add_user_voice($sf_user->getCulture()) ?>
+     > </body>
+
 
 TODO
 ----
