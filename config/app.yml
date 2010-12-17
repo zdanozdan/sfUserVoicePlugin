@@ -1,0 +1,27 @@
+#You need to set up for the service in uservoice.com to get key,host and forum id
+#
+#key	required:yes	Your UserVoice subdomain
+#host	required:yes	Your UserVoice URL
+#forum	required: yes	 of Forum
+#alignment left, right	
+#background_color #f00		
+#text_color  white available: white, black	
+#hover_color #06c		
+#lang	en available: cn, da, de, en, es, fi, fr, he, it, ja, nl, no_NB, pl, pt, pt_BR, tr	
+#params See Single Sign-On documentation
+#no_dialog false If true, clicking the tab takes you directly to your forum
+
+
+all:
+  sf_user_voice_plugin:
+    key:                  
+    host: 
+    forum:
+    alignment:              right	
+    background_color:       f00 
+    text_color:             white
+    hover_color:            06c
+    show_tab:               true
+    lang:                   en
+    params:                 
+    no_dialog:              false
